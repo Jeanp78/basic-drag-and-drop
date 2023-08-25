@@ -17,6 +17,7 @@
         }
 
         .btn {
+             cursor: pointer;
             position: absolute;
             padding: 10px 20px;
             font-size: 20px;
@@ -28,7 +29,6 @@
             border-radius: 5px;
             box-shadow: 0px 0px 100px white;
             background: linear-gradient(90deg, rgb(12, 4, 31), rgb(112, 38, 186));
-            /* animation: anim .9s linear infinite; */
             transition: all;
             top: calc(50vh - 25px);
             left: calc(50vw - 50px) ;
@@ -57,6 +57,11 @@
             btn.removeEventListener("mousemove", drag);
         })
 
+        let x ;
+
+        document.addEventListener('mousemove',(event)=>{
+            x = event.clientX
+        })
 
 
 
