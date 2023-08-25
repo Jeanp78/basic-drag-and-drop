@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basic Drag and Drop</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,7 +17,7 @@
         }
 
         .btn {
-             cursor: pointer;
+            cursor: pointer;
             position: absolute;
             padding: 10px 20px;
             font-size: 20px;
@@ -29,10 +29,18 @@
             border-radius: 5px;
             box-shadow: 0px 0px 100px white;
             background: linear-gradient(90deg, rgb(12, 4, 31), rgb(112, 38, 186));
-            transition: all;
+            transition: transform .2s ease;
             top: calc(50vh - 25px);
-            left: calc(50vw - 50px) ;
+            left: calc(50vw - 50px);
             border: none;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, rgb(32, 24, 51), rgb(122, 48, 196));
+        }
+
+        .btn:active {
+            transform: scale(.9);
         }
     </style>
 </head>
@@ -57,9 +65,9 @@
             btn.removeEventListener("mousemove", drag);
         })
 
-        let x ;
+        let x;
 
-        document.addEventListener('mousemove',(event)=>{
+        document.addEventListener('mousemove', (event) => {
             x = event.clientX
         })
 
